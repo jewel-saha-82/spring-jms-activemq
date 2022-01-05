@@ -1,4 +1,4 @@
-package org.example.consumer;
+package org.example.plain.consumer;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -26,5 +26,9 @@ public class HelloWorldConsumer {
         } else {
             System.out.println("Received: " + message);
         }
+
+        consumer.close();
+        session.close();
+        connection.close();
     }
 }

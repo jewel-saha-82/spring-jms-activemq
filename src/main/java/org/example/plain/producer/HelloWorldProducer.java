@@ -1,4 +1,4 @@
-package org.example.producer;
+package org.example.plain.producer;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
@@ -24,6 +24,7 @@ public class HelloWorldProducer {
         System.out.println("Sent message: " + message.hashCode() + " : " + Thread.currentThread().getName());
         producer.send(message);
 
+        producer.close();
         session.close();
         connection.close();
     }
